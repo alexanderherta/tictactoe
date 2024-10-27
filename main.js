@@ -16,7 +16,8 @@ const square8 = document.querySelector("#square8");
 const square9 = document.querySelector("#square9");
 const xImg = `<img class="x-o-img" src="./x.png" alt="X image">`;
 const oImg = `<img class="x-o-img" src="./o.png" alt="O image">`;
-let isPlayerX = true;
+let switchImg = true;
+let switchPlayer = true;
 
 function startGame() {
   for(i = 0; i < 9; i++) {
@@ -26,31 +27,40 @@ function startGame() {
   grid.addEventListener("click", (e) => {
     switch(e.target.id) {
       case "square1":
-        square1.innerHTML = switchPlayers();
+        square1.innerHTML = switchPlayersImg();
+        gridArray[0][0] = switchPlayers();
         break;
       case "square2":
-        square2.innerHTML = switchPlayers();
+        square2.innerHTML = switchPlayersImg();
+        gridArray[0][1] = switchPlayers();
         break;
       case "square3":
-        square3.innerHTML = switchPlayers();
+        square3.innerHTML = switchPlayersImg();
+        gridArray[0][2] = switchPlayers();
         break;
       case "square4":
-        square4.innerHTML = switchPlayers();
+        square4.innerHTML = switchPlayersImg();
+        gridArray[1][0] = switchPlayers();
         break;
       case "square5": 
-        square5.innerHTML = switchPlayers();
+        square5.innerHTML = switchPlayersImg();
+        gridArray[1][1] = switchPlayers();
         break;
       case "square6":
-        square6.innerHTML = switchPlayers();
+        square6.innerHTML = switchPlayersImg();
+        gridArray[1][2] = switchPlayers();
         break;
       case "square7":
-        square7.innerHTML = switchPlayers();
+        square7.innerHTML = switchPlayersImg();
+        gridArray[2][0] = switchPlayers();
         break;
       case "square8":
-        square8.innerHTML = switchPlayers();
+        square8.innerHTML = switchPlayersImg();
+        gridArray[2][1] = switchPlayers();
         break;
       case "square9":
-        square9.innerHTML = switchPlayers();
+        square9.innerHTML = switchPlayersImg();
+        gridArray[2][2] = switchPlayers();
         break;
       default:
         break;
@@ -58,13 +68,24 @@ function startGame() {
   });
 }
 
-function switchPlayers() {
-  if(isPlayerX) {
-    isPlayerX = !isPlayerX;
+function switchPlayersImg() {
+  if(switchImg) {
+    switchImg = !switchImg;
     return xImg;
   }
-  if(!isPlayerX) {
-    isPlayerX = !isPlayerX;
+  if(!switchImg) {
+    switchImg = !switchImg;
     return oImg;
+  }
+}
+
+function switchPlayers() {
+  if(switchPlayer) {
+    switchPlayer = !switchPlayer;
+    return "X";
+  }
+  if(!switchPlayer) {
+    switchPlayer = !switchPlayer;
+    return "O";
   }
 }
