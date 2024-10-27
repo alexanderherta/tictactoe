@@ -1,5 +1,5 @@
 const grid = document.querySelector(".grid");
-let gridArray = [
+let positions = [
   [" ", " ", " "],
   [" ", " ", " "],
   [" ", " ", " "]
@@ -28,39 +28,48 @@ function startGame() {
     switch(e.target.id) {
       case "square1":
         square1.innerHTML = switchPlayersImg();
-        gridArray[0][0] = switchPlayers();
+        positions[0][0] = switchPlayers();
+        checkIfWinner();
         break;
       case "square2":
         square2.innerHTML = switchPlayersImg();
-        gridArray[0][1] = switchPlayers();
+        positions[0][1] = switchPlayers();
+        checkIfWinner();
         break;
       case "square3":
         square3.innerHTML = switchPlayersImg();
-        gridArray[0][2] = switchPlayers();
+        positions[0][2] = switchPlayers();
+        checkIfWinner();
         break;
       case "square4":
         square4.innerHTML = switchPlayersImg();
-        gridArray[1][0] = switchPlayers();
+        positions[1][0] = switchPlayers();
+        checkIfWinner();
         break;
       case "square5": 
         square5.innerHTML = switchPlayersImg();
-        gridArray[1][1] = switchPlayers();
+        positions[1][1] = switchPlayers();
+        checkIfWinner();
         break;
       case "square6":
         square6.innerHTML = switchPlayersImg();
-        gridArray[1][2] = switchPlayers();
+        positions[1][2] = switchPlayers();
+        checkIfWinner();
         break;
       case "square7":
         square7.innerHTML = switchPlayersImg();
-        gridArray[2][0] = switchPlayers();
+        positions[2][0] = switchPlayers();
+        checkIfWinner();
         break;
       case "square8":
         square8.innerHTML = switchPlayersImg();
-        gridArray[2][1] = switchPlayers();
+        positions[2][1] = switchPlayers();
+        checkIfWinner();
         break;
       case "square9":
         square9.innerHTML = switchPlayersImg();
-        gridArray[2][2] = switchPlayers();
+        positions[2][2] = switchPlayers();
+        checkIfWinner();
         break;
       default:
         break;
@@ -87,5 +96,57 @@ function switchPlayers() {
   if(!switchPlayer) {
     switchPlayer = !switchPlayer;
     return "O";
+  }
+}
+
+function checkIfWinner() {
+  if(positions[0][0] === "X" && positions[0][1] === "X" && positions[0][2] === "X") {
+    
+  }
+  if(positions[1][0] === "X" && positions[1][1] === "X" && positions[1][2] === "X") {
+    
+  }
+  if(positions[2][0] === "X" && positions[2][1] === "X" && positions[2][2] === "X") {
+
+  }
+  if(positions[0][0] === "X" && positions[1][0] === "X" && positions[2][0] === "X") {
+
+  }
+  if(positions[0][1] === "X" && positions[1][1] === "X" && positions[2][1] === "X") {
+
+  }
+  if(positions[0][2] === "X" && positions[1][2] === "X" && positions[2][2] === "X") {
+
+  }
+  if(positions[0][0] === "X" && positions[1][1] === "X" && positions[2][2] === "X") {
+
+  }
+  if(positions[0][2] === "X" && positions[1][1] === "X" && positions[2][0] === "X") {
+
+  }
+
+  if(positions[0][0] === "O" && positions[0][1] === "O" && positions[0][2] === "O") {
+    
+  }
+  if(positions[1][0] === "O" && positions[1][1] === "O" && positions[1][2] === "O") {
+    
+  }
+  if(positions[2][0] === "O" && positions[2][1] === "O" && positions[2][2] === "O") {
+
+  }
+  if(positions[0][0] === "O" && positions[1][0] === "O" && positions[2][0] === "O") {
+
+  }
+  if(positions[0][1] === "O" && positions[1][1] === "O" && positions[2][1] === "O") {
+
+  }
+  if(positions[0][2] === "O" && positions[1][2] === "O" && positions[2][2] === "O") {
+
+  }
+  if(positions[0][0] === "O" && positions[1][1] === "O" && positions[2][2] === "O") {
+
+  }
+  if(positions[0][2] === "O" && positions[1][1] === "O" && positions[2][0] === "O") {
+    
   }
 }
