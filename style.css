@@ -14,7 +14,11 @@ body {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 50px;
+}
+
+span {
+  color: green;
 }
 
 .grid {
